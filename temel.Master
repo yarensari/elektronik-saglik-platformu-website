@@ -1,0 +1,436 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="temel.master.cs" Inherits="elektronik_saglik_platformu_web_doktor.temel" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        background-color: #B3F2E5;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .auto-style1 {
+        min-height: 100vh;
+        margin-top: 0;
+    }
+
+    .auto-style2 {
+        background-color: #B4B4B8;
+        width: 100%;
+        height: 30px;
+    }
+
+    .auto-style3 {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        grid-template-areas: "auto-style4 auto-style5"
+            "auto-style6 auto-style5"
+            /*"acilDurumContainer auto-style5"*/
+            "auto-style7 auto-style5";
+        grid-gap: 30px;
+        margin-top: 30px;
+        margin-left: 45px;
+    }
+
+    .auto-style4 {
+        background-color: #FFFFFF;
+        border-radius: 16px;
+        grid-area: auto-style4;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: min-content min-content;
+        grid-template-areas: "auto-style9 auto-style10 auto-style10"
+            "auto-style11 auto-style12 auto-style13"
+            "auto-style14 auto-style14 auto-style14";
+    }
+
+    .auto-style5 {
+        grid-area: auto-style5;
+        background-color: #FFFFFF;
+        border-radius: 16px;
+        height: 600px;
+    }
+
+    .auto-style6 {
+        grid-area: auto-style6;
+    }
+
+    .auto-style7 {
+        grid-area: auto-style7;
+    }
+
+    /*.acilDurumContainer {
+        grid-area: acilDurumContainer;
+    }*/
+
+    .auto-style9 {
+        grid-area: auto-style9;
+        margin: 20px 0 0 20px;
+    }
+
+    .auto-style10 {
+        grid-area: auto-style10;
+        font-family: sans-serif;
+        margin-top: 15px;
+    }
+
+    .auto-style11 {
+        grid-area: auto-style11;
+        margin-left: 20px;
+    }
+
+    .auto-style12 {
+        grid-area: auto-style12;
+    }
+
+    .auto-style13 {
+        grid-area: auto-style13;
+    }
+
+    .auto-style14 {
+        grid-area: auto-style14;
+        margin-bottom: 10px;
+    }
+
+    .auto-style15 {
+        margin: 0;
+        padding: 8px;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+
+    .auto-style16 {
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        margin: 0px 10px;
+        font-weight: bold;
+        background-color: #EE99C2;
+        border-radius: 16px;
+        width: 140px;
+        height: 30px;
+    }
+
+    .auto-style17 {
+        margin: 0;
+        padding: 4px;
+        text-align: center;
+        color: #FFFFFF;
+        font-size: 16px;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    .auto-style18 {
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+    }
+
+        .auto-style18 div:hover {
+            color: #FFFFFF;
+        }
+
+
+    .auto-style19 {
+        border-radius: 16px;
+        border-style: outset;
+        border-color: #48CB8E;
+        border-width: 3px;
+        background-color: #48CB8E;
+    }
+
+    .auto-style20 {
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+    }
+
+        .auto-style20 div:hover {
+            color: #FFFFFF;
+        }
+
+    .auto-style21 {
+        text-decoration: none;
+        color: black;
+    }
+
+        .auto-style21:hover {
+            color: #FFFFFF;
+        }
+
+    .auto-style23 {
+        margin: 0;
+        font-weight: bold;
+        display: inline-block;
+        background-color: #EE99C2;
+        padding: 5px 180px 5px 11px;
+        border-radius: 16px;
+        width: 533px;
+        background-color: #FFA83F;
+        border-style: outset;
+        border-color: #FFA83F;
+        border-width: 1px;
+        font-family: sans-serif;
+        color: white;
+        font-size: 25px;
+    }
+
+    .auto-style48 {
+        border-style: outset;
+        font-style: italic;
+        font-family: sans-serif;
+        border: 0px;
+        width: 572px;
+        height: 80px;
+        margin-left: 3px;
+        font-size: 17px;
+    }
+
+        .auto-style48:hover {
+            border-color: #FFA83F;
+        }
+
+        .auto-style48:focus {
+            border-color: #FFA83F;
+        }
+
+    .auto-style49 {
+        font-family: sans-serif;
+    }
+
+    .auto-style50 {
+        background-color: #FFA83F;
+        border-color: #FFA83F;
+        border-style: outset;
+        color: white;
+        font-family: sans-serif;
+        border-radius: 8px;
+        float: right;
+        margin-top: 5px;
+        margin-right: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        height: 26px;
+        font-size: 15px;
+    }
+
+        .auto-style50:hover {
+            background-color: #FFDCB2;
+        }
+
+    .auto-style52 {
+        border-radius: 16px;
+        border-style: outset;
+        border-color: #FFA83F;
+        border-width: 3px;
+        background-color: #FFA83F;
+    }
+
+    .auto-style53 {
+        position: absolute;
+        margin-top: -17px;
+        background-color: white;
+        width: 577px;
+        height: 105px;
+        z-index: -1;
+    }
+
+    .message {
+        float: left;
+        margin-left: 13px;
+        margin-top: 5px;
+        font-size: 12px;
+        font-family: sans-serif;
+        color: gray;
+    }
+
+    .isim {
+         grid-area: auto-style10;
+         font-family: sans-serif;
+         margin-top: 10px;
+         margin-left: 0px;
+    }
+
+    .acilDurum {
+
+    }
+</style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="auto-style1">
+            <div class="auto-style3">
+                <div class="auto-style4">
+                    <div class="auto-style9">
+                        <img src="fotograflar/user.png" style="width: 130px; height: 130px"/>
+                    </div>
+                    <div class="auto-style10">
+                        <p style="font-size: 30px" class="auto-style15">HASTA BİLGİLERİ</p>
+                        <div>
+                            <table class="auto-style15" style="padding: 10px 0px 0px 8px; font-size: 20px">
+                                <tr>
+                                    <td>
+                                        <p style="margin: 0px">
+                                            İSİM:
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <asp:Repeater ID="hasta_adi" runat="server">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label2" runat="server" CssClass="isim" Text='<%# Eval("name") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table class="auto-style15" style="padding: 0px 0px 0px 8px; font-size: 20px">
+                                <tr>
+                                    <td>
+                                        <p style="margin: 0px">
+                                            SOYİSİM:
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <asp:Repeater ID="hasta_soyadi" runat="server">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label2" runat="server" CssClass="auto-style49" Text='<%# Eval("surname") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="auto-style11">
+                        <div class="auto-style16">
+                            <table style="font-size: 16px">
+                                <tr>
+                                    <td>
+                                        <p class="auto-style49">
+                                            YAŞ:
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <asp:Repeater ID="hasta_yasi" runat="server">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label3" runat="server" class="auto-style49" Text='<%# Eval("age") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="auto-style12">
+                        <div class="auto-style16">
+                            <table style="font-size: 16px">
+                                <tr>
+                                    <td>
+                                        <p class="auto-style49">
+                                            BOY:
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <asp:Repeater ID="hasta_boyu" runat="server">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label4" runat="server" class="auto-style49" Text='<%# Eval("height") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="auto-style13">
+                        <div class="auto-style16">
+                            <table style="font-size: 16px">
+                                <tr>
+                                    <td>
+                                        <p class="auto-style49">
+                                            KİLO:
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <asp:Repeater ID="hasta_kilosu" runat="server">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label5" runat="server" class="auto-style49" Text='<%# Eval("weight") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="auto-style14">
+                        <div class="auto-style16" style="width: 522px; margin-left: 30px; margin-bottom: 10px">
+                            <table style="font-size: 16px">
+                                <tr>
+                                    <td>
+                                        <p class="auto-style49">
+                                            VÜCUT KİTLE ENDEKSİ:
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <asp:Repeater ID="hasta_bmi" runat="server">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label5" runat="server" class="auto-style49" Text='<%# Eval("bmi") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="auto-style5">
+                    <div style="position: absolute; margin-top: -15px" >
+                        <p class="auto-style23">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </p>
+                    </div>
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <div class="auto-style6">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="auto-style7">
+                    <a href="gonderilenNotlar.aspx" class="auto-style18">
+                        <div class="auto-style52">
+                            <p class="auto-style17">
+                                DOKTOR NOTLARI    
+                                    <i class="fa-regular fa-envelope" style="color: #FFFFFF; margin-left: 122px"></i>
+                            </p>
+                            <div class="auto-style53">
+                            </div>
+                        </div>
+                    </a>
+                    <asp:TextBox ID="doktorNot" runat="server" TextMode="MultiLine" Placeholder="Lütfen göndereceğiniz notu giriniz...Maksimum 255 karakter gönderilebilir." class="auto-style48" MaxLength="255"></asp:TextBox>
+                    <div id="successMessageDiv" runat="server"></div>
+                    <div id="errorMessageDiv" runat="server"></div>
+                    <asp:Button ID="doktorNotGönder" runat="server" Text="GÖNDER" OnClick="doktorNotGönder_Click1" CssClass="auto-style50" />
+                </div>
+             </div>
+        </div>
+    </form>
+</body>
+</html>
