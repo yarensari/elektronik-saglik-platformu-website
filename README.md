@@ -1,1 +1,1 @@
-"# elektronik-saglik-platformu-website" 
+# elektronik-saglik-platformu-website
